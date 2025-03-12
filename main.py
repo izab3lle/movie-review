@@ -5,19 +5,11 @@ import utils.table_creation as utils
 conn = sqlite3.connect("movie_review.db")
 
 #movies_df = utils.create_movie_table()
-users_df = utils.create_user_table()
+#users_df = utils.create_user_table()
+reviews_df = utils.create_review_table()
 
-"""
-movies_df.to_sql(
-    'movies',
-    conn,
-    if_exists = 'replace',
-    index = False,
-)
-"""
-
-users_df.to_sql(
-    'users',
+reviews_df.to_sql(
+    'reviews',
     conn,
     if_exists = 'replace',
     index = False,
@@ -25,15 +17,15 @@ users_df.to_sql(
 
 query = """
     SELECT *
-    FROM movies
-    WHERE release_date > "2012-07-20"
+    FROM reviews
+    WHERE rating > 2
 """
 
-query_users = """
+query_all = """
     SELECT *
-    FROM users
+    FROM reviews
 """
 
-pd.read_sql(query, conn)
+pd.read_sql(query_all, conn)
 
 

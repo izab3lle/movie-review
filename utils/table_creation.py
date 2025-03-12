@@ -45,18 +45,11 @@ def create_user_table() -> pd.DataFrame:
 
 def create_review_table() -> pd.DataFrame:
     table = pd.DataFrame({
+        'review_id':[1, 2, 3],
         'user_id':[1, 2, 3],
-        'username':['user1', 'user2', 'user3'],
-        'birth_date': [
-            datetime.date(2002, 12, 6),
-            datetime.date(1998, 7, 20),
-            datetime.date(1984, 8, 6)
-        ],
-        'email': [
-            'e1@email.com',
-            'e2@email.com',
-            'e3@email.com'
-        ]
+        'movie_id':[1, 2, 3],
+        'comment':['ruim', 'cinema puro', 'ok medio'],
+        'rating':[2, 5, 3]
     })
     
     return table
