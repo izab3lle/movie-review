@@ -1,7 +1,7 @@
 import pandas as pd
 import datetime
-import examples as ex
-from examples import users_data
+import utils.examples as ex
+
 """
 (traduzir pra inglês)
 Módulo de funções que criam os

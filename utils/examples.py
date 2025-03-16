@@ -1,5 +1,5 @@
 #MOVIE TABLE
-"""
+
 movie_titles = ['The Lord of the Rings: The Fellowship of The Ring',
                 'The Lord of the Rings: The Two Towers',
                 'The Lord of the Rings: The Return of The King',
@@ -36,7 +36,6 @@ movie_release_dates = ['12-19-2001',
 
 movie_durations = [178, 179, 201, 154, 175, 142, 155, 169]
 
-"""
 with open("/workspaces/movie-review/files/users.txt") as file:
     users = [line.rstrip() for line in file]
 
