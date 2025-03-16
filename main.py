@@ -4,10 +4,13 @@ import utils.table_creation as utils
 
 conn = sqlite3.connect("movie_review_test.db")
 
+# Generating data frames from examples
 movies_df = utils.create_movie_table()
 users_df = utils.create_user_table()
 reviews_df = utils.create_review_table()
 
+
+# Adding tables do the database
 movies_df.to_sql(
     'movies',
     conn,
@@ -22,19 +25,14 @@ users_df.to_sql(
     index = False,
 )
 
-query_all = """
-    SELECT *
-    FROM users
-"""
-
-pd.read_sql(query_all, conn)
-
 reviews_df.to_sql(
     'reviews',
     conn,
     if_exists = 'replace',
     index = False,
 )
+
+# QUERIES
 
 # Highest rated movies
 query_high_rate = """
@@ -61,7 +59,6 @@ query_all = """
 pd.read_sql(query_high_rate, conn)
 pd.read_sql(query_low_rate, conn)
 pd.read_sql(query_all, conn)
-pd.read_sql(query_all, conn)
-pd.read_sql(query_all, conn)
+
 
 conn.close()
