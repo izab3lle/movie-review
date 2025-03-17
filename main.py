@@ -2,7 +2,7 @@ import pandas as pd
 import sqlite3
 import utils.table_creation as utils
 
-conn = sqlite3.connect("movie_review_test.db")
+conn = sqlite3.connect("movie_review.db")
 
 # Generating data frames from examples
 movies_df = utils.create_movie_table()
