@@ -25,4 +25,3 @@ def create_review_table() -> pd.DataFrame:
     table = pd.DataFrame(reviews)
 
     return table
-#Review
